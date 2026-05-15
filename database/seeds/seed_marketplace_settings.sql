@@ -1,0 +1,20 @@
+-- Seed: Marketplace settings for booking and payment configuration
+INSERT INTO settings (setting_key, setting_value) VALUES
+('default_commission_rate', '15'),
+('min_booking_advance_hours', '4'),
+('max_booking_advance_days', '30'),
+('cancellation_window_hours', '4'),
+('cancellation_fee_percentage', '10'),
+('payout_cycle_days', '7'),
+('min_payout_amount', '500'),
+('razorpay_key_id', ''),
+('razorpay_key_secret', ''),
+('razorpay_webhook_secret', ''),
+('fcm_server_key', ''),
+('sms_provider', 'msg91'),
+('sms_api_key', ''),
+('vendor_trial_days', '30'),
+('tax_percentage', '18'),
+('platform_name', 'Servora'),
+('support_phone', ''),
+('support_email', 'support@servora.com');

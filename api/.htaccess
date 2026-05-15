@@ -1,0 +1,40 @@
+# Handle CORS preflight at Apache level (before PHP)
+<IfModule mod_headers.c>
+    SetEnvIf Origin "^https://servicehub-tan\.vercel\.app$" CORS_ORIGIN=$0
+    SetEnvIf Origin "^https://servicehub-wrapper\.vercel\.app$" CORS_ORIGIN=$0
+    SetEnvIf Origin "^http://localhost:3000$" CORS_ORIGIN=$0
+    Header always set Access-Control-Allow-Origin "%{CORS_ORIGIN}e" env=CORS_ORIGIN
+    Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+    Header always set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept, Authorization, X-Auth-Token"
+    Header always set Access-Control-Allow-Credentials "true"
+    Header always set Access-Control-Max-Age "3600"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /Mechanical/api/
+
+    # Return 200 for OPTIONS preflight — no PHP needed
+    RewriteCond %{REQUEST_METHOD} OPTIONS
+    RewriteRule ^(.*)$ $1 [R=200,L]
+
+    # Pass Authorization header to PHP
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Block access to application and system folders
+    RewriteRule ^(application|system) - [F,L]
+
+    # Route everything through index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [QSA,L]
+</IfModule>
+
+<IfModule mod_setenvif.c>
+    SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    ErrorDocument 404 /Mechanical/api/index.php
+</IfModule>

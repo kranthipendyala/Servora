@@ -1,0 +1,65 @@
+# Mechanical Directory - Apache Config for Static Export
+# Place this as .htaccess in /home/USERNAME/public_html/mechanical/
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /mechanical/
+
+    # Don't rewrite API requests — let them pass to PHP
+    RewriteRule ^api/ - [L]
+
+    # Don't rewrite actual files and directories
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Remove trailing slash for clean URLs (except root)
+    RewriteCond %{REQUEST_URI} !^/mechanical/$
+    RewriteRule ^(.*)/$ /mechanical/$1 [R=301,L]
+
+    # Try .html extension for clean URLs
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^(.*)$ $1.html [L]
+
+    # SPA fallback: city pages
+    RewriteRule ^([a-z0-9-]+)$ $1.html [L]
+
+    # SPA fallback: city/category pages
+    RewriteRule ^([a-z0-9-]+)/([a-z0-9-]+)$ $1/$2.html [L]
+
+    # SPA fallback: city/category/locality pages
+    RewriteRule ^([a-z0-9-]+)/([a-z0-9-]+)/([a-z0-9-]+)$ $1/$2/$3.html [L]
+
+    # SPA fallback: business detail
+    RewriteRule ^business/([a-z0-9-]+)$ business/$1.html [L]
+
+    # Fallback to index.html for any unmatched route
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.html [L]
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# Gzip compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>

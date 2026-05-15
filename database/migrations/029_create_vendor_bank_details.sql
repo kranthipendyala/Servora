@@ -1,0 +1,15 @@
+-- Migration 029: Vendor bank details for payouts
+CREATE TABLE IF NOT EXISTS vendor_bank_details (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    vendor_id INT UNSIGNED NOT NULL UNIQUE,
+    account_holder_name VARCHAR(150) NOT NULL,
+    account_number VARCHAR(30) NOT NULL,
+    ifsc_code VARCHAR(15) NOT NULL,
+    bank_name VARCHAR(100) DEFAULT NULL,
+    branch VARCHAR(150) DEFAULT NULL,
+    upi_id VARCHAR(100) DEFAULT NULL,
+    is_verified TINYINT(1) DEFAULT 0,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (vendor_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

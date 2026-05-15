@@ -1,0 +1,2 @@
+-keep class com.mechanicalhub.** { *; }
+-dontwarn android.webkit.**

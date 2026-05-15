@@ -102,7 +102,7 @@ export default function TermsPage() {
             <h2 className="text-xl md:text-2xl font-heading font-bold text-primary-800 mt-8 mb-3">10. Contact</h2>
             <p className="text-gray-600 leading-relaxed">
               For questions about these Terms, contact us at{" "}
-              <a href="mailto:support@servicehub.com" className="text-primary-600 font-bold hover:text-primary-800">support@servicehub.com</a>.
+              <a href="mailto:support@servora.com" className="text-primary-600 font-bold hover:text-primary-800">support@servora.com</a>.
             </p>
           </div>
         </div>

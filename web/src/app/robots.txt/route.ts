@@ -3,7 +3,7 @@ import { SITE_URL } from "@/lib/seo";
 const BASE = SITE_URL.replace(/\/+$/, "");
 
 export async function GET() {
-  const body = `# robots.txt for ServiceHub
+  const body = `# robots.txt for Servora
 # ${BASE}
 
 # ─── All crawlers ───────────────────────────────────

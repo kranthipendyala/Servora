@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import type { SeoMeta } from "@/types";
 
-export const SITE_NAME = "ServiceHub";
+export const SITE_NAME = "Servora";
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://servicehub-beta.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 export const SITE_DESCRIPTION =
   "India's #1 home services marketplace. Book verified plumbers, electricians, AC repair, home cleaning and more. Read reviews, compare prices, book online.";
 export const SITE_TAGLINE = "Find the Best Home Services Near You";

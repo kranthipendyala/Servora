@@ -131,7 +131,7 @@ export default function AdminSidebar() {
         {!collapsed && (
           <Link href="/admin/dashboard" className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center text-white font-bold text-sm">S</div>
-            <span className="font-semibold text-lg">ServiceHub</span>
+            <span className="font-semibold text-lg">Servora</span>
           </Link>
         )}
         <button onClick={() => setCollapsed(!collapsed)} className={`p-1.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-white transition-colors ${collapsed ? "mx-auto" : ""}`}>
@@ -220,7 +220,7 @@ export default function AdminSidebar() {
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium truncate">{user?.name || "Admin"}</p>
-              <p className="text-xs text-slate-400 truncate">{user?.email || "admin@servicehub.in"}</p>
+              <p className="text-xs text-slate-400 truncate">{user?.email || "admin@servora.in"}</p>
             </div>
             <button onClick={() => setShowLogoutModal(true)} className="p-1.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-red-400" title="Logout">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>

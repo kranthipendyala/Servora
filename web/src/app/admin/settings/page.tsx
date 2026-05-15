@@ -23,7 +23,7 @@ interface Settings {
 const defaultSettings: Settings = {
   site_name: "Home Services Directory",
   site_tagline: "Find the best home services near you",
-  contact_email: "info@servicehub.in",
+  contact_email: "info@servora.in",
   contact_phone: "",
   contact_address: "",
   default_city: "",

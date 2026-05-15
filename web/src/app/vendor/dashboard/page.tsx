@@ -176,7 +176,7 @@ export default function VendorDashboardPage() {
           </div>
 
           <p className="text-xs text-gray-400 mt-6 text-center">
-            Need help? Contact support@servicehub.in
+            Need help? Contact support@servora.in
           </p>
         </div>
       </div>

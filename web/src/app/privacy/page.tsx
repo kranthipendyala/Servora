@@ -73,7 +73,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl md:text-2xl font-heading font-bold text-primary-800 mt-8 mb-3">6. Your Rights</h2>
             <p className="text-gray-600 leading-relaxed">
               You have the right to access, update, or delete your personal information at any time.
-              Contact us at <a href="mailto:support@servicehub.com" className="text-primary-600 font-bold hover:text-primary-800">support@servicehub.com</a> to
+              Contact us at <a href="mailto:support@servora.com" className="text-primary-600 font-bold hover:text-primary-800">support@servora.com</a> to
               exercise these rights.
             </p>
 
@@ -86,7 +86,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl md:text-2xl font-heading font-bold text-primary-800 mt-8 mb-3">8. Contact Us</h2>
             <p className="text-gray-600 leading-relaxed">
               If you have questions about this Privacy Policy, please contact us at{" "}
-              <a href="mailto:support@servicehub.com" className="text-primary-600 font-bold hover:text-primary-800">support@servicehub.com</a>.
+              <a href="mailto:support@servora.com" className="text-primary-600 font-bold hover:text-primary-800">support@servora.com</a>.
             </p>
           </div>
         </div>

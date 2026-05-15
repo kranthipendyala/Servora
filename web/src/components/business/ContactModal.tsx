@@ -52,7 +52,7 @@ export default function ContactModal({ open, onClose, business }: ContactModalPr
     logLead("whatsapp");
     const cleanPhone = phone.replace(/\D/g, "");
     const waPhone = cleanPhone.startsWith("91") ? cleanPhone : `91${cleanPhone}`;
-    window.open(`https://wa.me/${waPhone}?text=Hi, I found your business on ServiceHub. I need your services.`, "_blank");
+    window.open(`https://wa.me/${waPhone}?text=Hi, I found your business on Servora. I need your services.`, "_blank");
   };
 
   const handleCallback = async () => {

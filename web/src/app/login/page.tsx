@@ -174,7 +174,7 @@ function LoginContent() {
             {step === "phone" && (
               <>
                 <h1 className="text-2xl font-heading font-medium text-primary-700">Welcome</h1>
-                <p className="text-sm text-gray-500 mt-1">Sign in to your ServiceHub account</p>
+                <p className="text-sm text-gray-500 mt-1">Sign in to your Servora account</p>
               </>
             )}
             {step === "otp" && (

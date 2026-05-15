@@ -18,7 +18,7 @@ export default function Footer() {
                 <span className="text-white font-black text-sm">S</span>
               </div>
               <span className="text-xl font-black text-white tracking-tight">
-                Service<span className="text-primary-400">Hub</span>
+                Serv<span className="text-primary-400">ora</span>
               </span>
             </Link>
             <p className="text-sm text-gray-500 leading-relaxed max-w-xs mb-6">

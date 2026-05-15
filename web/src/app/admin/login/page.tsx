@@ -82,7 +82,7 @@ export default function AdminLoginPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@servicehub.in"
+                placeholder="admin@servora.in"
                 autoComplete="email"
                 className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all"
               />

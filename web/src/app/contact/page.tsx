@@ -43,8 +43,8 @@ export default function ContactPage() {
             </div>
             <h3 className="text-lg font-heading font-bold text-primary-800 mb-2">Email Us</h3>
             <p className="text-gray-600 text-sm mb-3">For general inquiries and support</p>
-            <a href="mailto:support@servicehub.com" className="text-primary-600 font-bold text-sm hover:text-primary-800 transition-colors">
-              support@servicehub.com
+            <a href="mailto:support@servora.com" className="text-primary-600 font-bold text-sm hover:text-primary-800 transition-colors">
+              support@servora.com
             </a>
           </div>
 

@@ -163,7 +163,7 @@ export default function VendorRegisterPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.384-3.08A.5.5 0 005.5 12.5v0a.5.5 0 00.536.49l6.293-.54m-.93 2.72l2.08 3.6a.5.5 0 00.836.06l3.327-4.272a.5.5 0 00-.188-.752l-5.126-2.636m-2.929 4l5.08-7.08a.5.5 0 01.768-.077l2.077 1.927a.5.5 0 01.03.745L13.42 15.17a.5.5 0 01-.698.063l-1.302-1.063z" />
                 </svg>
               </div>
-              <span className="text-white/80 font-semibold text-lg">Service Hub</span>
+              <span className="text-white/80 font-semibold text-lg">Servora</span>
             </div>
 
             <h1 className="text-4xl xl:text-5xl font-extrabold mb-4 leading-tight">
@@ -171,7 +171,7 @@ export default function VendorRegisterPage() {
                 Grow Your Business
               </span>
               <br />
-              <span className="text-white/90 text-3xl xl:text-4xl">with Service Hub</span>
+              <span className="text-white/90 text-3xl xl:text-4xl">with Servora</span>
             </h1>
             <p className="text-slate-400 text-lg mb-10 leading-relaxed">
               Register in 30 seconds. Set up your services during onboarding.
@@ -318,7 +318,7 @@ export default function VendorRegisterPage() {
               </div>
             </div>
 
-            <p className="text-center text-xs text-slate-500 mt-6">Service Hub Vendor Portal</p>
+            <p className="text-center text-xs text-slate-500 mt-6">Servora Vendor Portal</p>
           </div>
         </div>
       </div>

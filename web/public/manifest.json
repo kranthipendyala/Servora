@@ -1,7 +1,7 @@
 {
-  "name": "MechanicalHub - Mechanical Services Directory",
-  "short_name": "MechanicalHub",
-  "description": "Find trusted mechanical, plumbing, electrical and HVAC services near you",
+  "name": "Servora — Home Services",
+  "short_name": "Servora",
+  "description": "Find trusted home services near you — plumbers, electricians, AC repair, cleaning and more.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#003366",

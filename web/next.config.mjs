@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const apiUrl =
-  process.env.NEXT_PUBLIC_API_URL || "https://catalysiscongress.com/api/m2/index.php/api";
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost/Servora/api/index.php/api";
 
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://servicehub-tan.vercel.app").replace(/\/+$/, "");
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/+$/, "");
 
 const nextConfig = {
   images: {
@@ -14,7 +14,7 @@ const nextConfig = {
       {
         protocol: "http",
         hostname: "localhost",
-        pathname: "/Mechanical/**",
+        pathname: "/Servora/**",
       },
     ],
   },

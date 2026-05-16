@@ -1,8 +1,8 @@
--- Run all migrations for Mechanical Directory
+-- Run all migrations for Servora
 -- Execute: mysql -u root < run_migrations.sql
 
-CREATE DATABASE IF NOT EXISTS mechanical_directory CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE mechanical_directory;
+CREATE DATABASE IF NOT EXISTS servora CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE servora;
 
 SOURCE migrations/001_create_states.sql;
 SOURCE migrations/002_create_cities.sql;

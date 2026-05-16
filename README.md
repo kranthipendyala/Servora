@@ -28,7 +28,7 @@ Servora/
 | Vendor app   | React Native 0.74 (bare CLI), React Navigation v6                   |
 | Backend API  | **CodeIgniter 3** (PHP 8.x), composer-autoloaded vendor             |
 | Auth         | Bearer-token sessions (custom) + Google OAuth (web)                 |
-| Database     | MySQL 8 (managed via phpMyAdmin) — schema `mechanical_directory`    |
+| Database     | MySQL 8 (managed via phpMyAdmin) — schema `servora`                 |
 | Search       | **Elasticsearch 8.x** (`elasticsearch/elasticsearch` PHP client)    |
 | Payments     | Razorpay (India)                                                    |
 | Notifications| Firebase Cloud Messaging                                            |
@@ -43,8 +43,8 @@ Servora/
 Run MySQL via XAMPP (or any local MySQL 8). Create the schema and load the seed dump:
 
 ```powershell
-mysql -u root -e "CREATE DATABASE mechanical_directory CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci"
-mysql -u root mechanical_directory < mechanical_directory_dump.sql
+mysql -u root -e "CREATE DATABASE servora CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci"
+mysql -u root servora < mechanical_directory_dump.sql
 ```
 
 phpMyAdmin (bundled with XAMPP): http://localhost/phpmyadmin

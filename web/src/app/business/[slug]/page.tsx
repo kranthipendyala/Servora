@@ -4,11 +4,11 @@ import { SITE_NAME, buildCanonicalUrl } from "@/lib/seo";
 import BusinessFallback from "@/components/business/BusinessFallback";
 
 interface BusinessPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({ params }: BusinessPageProps): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   try {
     const res = await getBusiness(slug);
     if (res.success && res.data) {
@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: BusinessPageProps): Promise<M
   return { title: `Business Details | ${SITE_NAME}` };
 }
 
-export default function BusinessDetailPage({ params }: BusinessPageProps) {
-  return <BusinessFallback slug={params.slug} />;
+export default async function BusinessDetailPage({ params }: BusinessPageProps) {
+  const { slug } = await params;
+  return <BusinessFallback slug={slug} />;
 }

@@ -18,7 +18,7 @@ import { SITE_NAME, buildCanonicalUrl, slugToTitle } from "@/lib/seo";
 import type { BreadcrumbItem, Category, Locality, Business } from "@/types";
 
 interface CityPageProps {
-  params: { city: string };
+  params: Promise<{ city: string }>;
 }
 
 export async function generateStaticParams(): Promise<{ city: string }[]> {
@@ -37,7 +37,7 @@ export async function generateStaticParams(): Promise<{ city: string }[]> {
 export async function generateMetadata({
   params,
 }: CityPageProps): Promise<Metadata> {
-  const { city: citySlug } = params;
+  const { city: citySlug } = await params;
   try {
     const cityRes = await getCity(citySlug);
     if (cityRes.success) {
@@ -62,7 +62,7 @@ export async function generateMetadata({
 }
 
 export default async function CityPage({ params }: CityPageProps) {
-  const { city: citySlug } = params;
+  const { city: citySlug } = await params;
 
   let cityName = slugToTitle(citySlug);
   let cityDescription = "";

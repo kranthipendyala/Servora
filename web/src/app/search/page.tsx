@@ -6,12 +6,13 @@ import { SITE_NAME } from "@/lib/seo";
 import type { BreadcrumbItem } from "@/types";
 
 interface SearchPageProps {
-  searchParams: { q?: string; city?: string };
+  searchParams: Promise<{ q?: string; city?: string }>;
 }
 
 export async function generateMetadata({ searchParams }: SearchPageProps): Promise<Metadata> {
-  const query = searchParams.q || "";
-  const city = searchParams.city || "";
+  const sp = await searchParams;
+  const query = sp.q || "";
+  const city = sp.city || "";
   const titleParts = ["Search Results"];
   if (query) titleParts.push(`for "${query}"`);
   if (city) titleParts.push(`in ${city}`);

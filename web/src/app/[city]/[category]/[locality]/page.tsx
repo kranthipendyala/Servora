@@ -14,16 +14,17 @@ import { SITE_NAME, buildCanonicalUrl, slugToTitle } from "@/lib/seo";
 import type { BreadcrumbItem, Business } from "@/types";
 
 interface LocalityPageProps {
-  params: { city: string; category: string; locality: string };
-  searchParams: { page?: string; rating?: string; sort?: string };
+  params: Promise<{ city: string; category: string; locality: string }>;
+  searchParams: Promise<{ page?: string; rating?: string; sort?: string }>;
 }
 
 export async function generateMetadata({
   params,
   searchParams,
 }: LocalityPageProps): Promise<Metadata> {
-  const { city: citySlug, category: categorySlug, locality: localitySlug } = params;
-  const page = parseInt(searchParams.page || "1", 10);
+  const { city: citySlug, category: categorySlug, locality: localitySlug } = await params;
+  const sp = await searchParams;
+  const page = parseInt(sp.page || "1", 10);
 
   let cityName = slugToTitle(citySlug);
   let categoryName = slugToTitle(categorySlug);
@@ -59,10 +60,11 @@ export default async function LocalityPage({
   params,
   searchParams,
 }: LocalityPageProps) {
-  const { city: citySlug, category: categorySlug, locality: localitySlug } = params;
-  const page = parseInt(searchParams.page || "1", 10);
-  const rating = searchParams.rating;
-  const sort = searchParams.sort;
+  const { city: citySlug, category: categorySlug, locality: localitySlug } = await params;
+  const sp = await searchParams;
+  const page = parseInt(sp.page || "1", 10);
+  const rating = sp.rating;
+  const sort = sp.sort;
 
   let cityName = slugToTitle(citySlug);
   let categoryName = slugToTitle(categorySlug);

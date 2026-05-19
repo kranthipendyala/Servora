@@ -4,6 +4,7 @@ import "./globals.css";
 import ConditionalLayout from "@/components/layout/ConditionalLayout";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { SITE_NAME, SITE_URL, SITE_DESCRIPTION } from "@/lib/seo";
+import { Providers } from "./providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -146,7 +147,9 @@ export default function RootLayout({
         <SchemaMarkup data={websiteSchema} />
       </head>
       <body className="font-sans min-h-screen flex flex-col antialiased">
-        <ConditionalLayout>{children}</ConditionalLayout>
+        <Providers>
+          <ConditionalLayout>{children}</ConditionalLayout>
+        </Providers>
         {/* Toast notification container */}
         <div id="toast-container" className="toast-container" />
       </body>

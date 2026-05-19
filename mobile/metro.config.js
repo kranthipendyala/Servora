@@ -1,19 +1,17 @@
-const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
+const { getDefaultConfig } = require("expo/metro-config");
+const { withNativeWind } = require("nativewind/metro");
+const path = require("path");
 
-const defaultConfig = getDefaultConfig(__dirname);
+const projectRoot = __dirname;
+const workspaceRoot = path.resolve(projectRoot, "..");
 
-const config = {
-  transformer: {
-    getTransformOptions: async () => ({
-      transform: {
-        experimentalImportSupport: false,
-        inlineRequires: true,
-      },
-    }),
-  },
-  resolver: {
-    sourceExts: [...defaultConfig.resolver.sourceExts, 'ts', 'tsx'],
-  },
-};
+const config = getDefaultConfig(projectRoot);
 
-module.exports = mergeConfig(defaultConfig, config);
+// Watch the shared/ workspace package so its TS source is picked up
+config.watchFolders = [workspaceRoot];
+config.resolver.nodeModulesPaths = [
+  path.resolve(projectRoot, "node_modules"),
+  path.resolve(workspaceRoot, "node_modules"),
+];
+
+module.exports = withNativeWind(config, { input: "./global.css" });

@@ -15,19 +15,26 @@ web/.next/
 web/out/
 web/tsconfig.tsbuildinfo
 
-# React Native build artifacts
+# React Native / Expo build artifacts
 mobile/.expo/
 mobile/dist/
+mobile/.expo-shared/
+mobile/expo-env.d.ts
 mobile/android/app/build/
 mobile/android/.gradle/
 mobile/android/build/
 mobile/android/local.properties
+mobile/ios/build/
+mobile/ios/Pods/
 vendor-app/.expo/
 vendor-app/dist/
+vendor-app/.expo-shared/
 vendor-app/android/app/build/
 vendor-app/android/.gradle/
 vendor-app/android/build/
 vendor-app/android/local.properties
+vendor-app/ios/build/
+vendor-app/ios/Pods/
 
 # CodeIgniter runtime
 api/application/logs/*

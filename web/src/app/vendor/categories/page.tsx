@@ -139,7 +139,7 @@ export default function VendorCategoriesPage() {
           return (
             <div
               key={cat.id}
-              className={`bg-white rounded-xl border shadow-sm overflow-hidden transition-all ${
+              className={`bg-white rounded-xl border shadow-xs overflow-hidden transition-all ${
                 isSelected ? "border-primary-300" : "border-gray-200"
               }`}
             >

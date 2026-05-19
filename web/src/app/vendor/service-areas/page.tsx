@@ -132,7 +132,7 @@ export default function VendorServiceAreasPage() {
 
       {/* City selection by state */}
       {Object.entries(stateGroups).map(([state, stateCities]) => (
-        <div key={state} className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+        <div key={state} className="bg-white rounded-xl border border-gray-200 shadow-xs overflow-hidden">
           <div className="px-5 py-3 bg-gray-50 border-b border-gray-200">
             <h3 className="text-sm font-semibold text-gray-700">{state}</h3>
           </div>

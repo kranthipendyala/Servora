@@ -128,8 +128,8 @@ export default function SearchBar({
         <div
           className={`flex w-full items-stretch bg-white transition-shadow ${
             isHero
-              ? "rounded-xl border border-gray-200 hover:shadow-sm"
-              : "rounded-full border border-gray-200 hover:shadow-sm"
+              ? "rounded-xl border border-gray-200 hover:shadow-xs"
+              : "rounded-full border border-gray-200 hover:shadow-xs"
           }`}
         >
           {/* City selector */}

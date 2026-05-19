@@ -176,7 +176,7 @@ export default function VendorBookingDetailPage() {
         {/* Main Info */}
         <div className="lg:col-span-2 space-y-6">
           {/* Service Items */}
-          <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <div className="bg-white rounded-xl border border-gray-200 shadow-xs">
             <div className="px-6 py-4 border-b border-gray-100">
               <h3 className="text-sm font-semibold text-gray-900">
                 Service Items
@@ -254,7 +254,7 @@ export default function VendorBookingDetailPage() {
           </div>
 
           {/* Vendor Notes */}
-          <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <div className="bg-white rounded-xl border border-gray-200 shadow-xs">
             <div className="px-6 py-4 border-b border-gray-100">
               <h3 className="text-sm font-semibold text-gray-900">
                 Vendor Notes
@@ -285,7 +285,7 @@ export default function VendorBookingDetailPage() {
         {/* Sidebar */}
         <div className="space-y-6">
           {/* Customer Info */}
-          <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <div className="bg-white rounded-xl border border-gray-200 shadow-xs">
             <div className="px-6 py-4 border-b border-gray-100">
               <h3 className="text-sm font-semibold text-gray-900">
                 Customer Details
@@ -318,7 +318,7 @@ export default function VendorBookingDetailPage() {
           </div>
 
           {/* Schedule */}
-          <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <div className="bg-white rounded-xl border border-gray-200 shadow-xs">
             <div className="px-6 py-4 border-b border-gray-100">
               <h3 className="text-sm font-semibold text-gray-900">Schedule</h3>
             </div>
@@ -355,7 +355,7 @@ export default function VendorBookingDetailPage() {
           </div>
 
           {/* Address */}
-          <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <div className="bg-white rounded-xl border border-gray-200 shadow-xs">
             <div className="px-6 py-4 border-b border-gray-100">
               <h3 className="text-sm font-semibold text-gray-900">
                 Service Address
@@ -400,7 +400,7 @@ export default function VendorBookingDetailPage() {
           </div>
 
           {/* Payment */}
-          <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <div className="bg-white rounded-xl border border-gray-200 shadow-xs">
             <div className="px-6 py-4 border-b border-gray-100">
               <h3 className="text-sm font-semibold text-gray-900">Payment</h3>
             </div>

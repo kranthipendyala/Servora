@@ -84,7 +84,7 @@ export default function VendorBankDetailsPage() {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 space-y-5">
+        <div className="bg-white rounded-xl border border-gray-200 shadow-xs p-6 space-y-5">
           <h3 className="text-base font-semibold text-gray-900">Account Information</h3>
 
           <div>

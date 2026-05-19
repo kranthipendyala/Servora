@@ -184,7 +184,7 @@ export default function AdminBookingsPage() {
             onClick={() => setStatusFilter(tab.value)}
             className={`px-4 py-2 text-sm font-medium rounded-lg whitespace-nowrap transition-colors ${
               statusFilter === tab.value
-                ? "bg-primary-600 text-white shadow-sm"
+                ? "bg-primary-600 text-white shadow-xs"
                 : "text-gray-600 hover:bg-gray-100"
             }`}
           >

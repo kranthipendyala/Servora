@@ -107,7 +107,7 @@ export default function Pagination({
             ) : page === currentPage ? (
               <span
                 key={page}
-                className="inline-flex items-center justify-center w-10 h-10 text-sm font-bold text-white bg-primary-500 rounded-lg shadow-sm"
+                className="inline-flex items-center justify-center w-10 h-10 text-sm font-bold text-white bg-primary-500 rounded-lg shadow-xs"
                 aria-current="page"
               >
                 {page}

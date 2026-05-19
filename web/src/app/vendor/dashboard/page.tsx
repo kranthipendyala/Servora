@@ -143,7 +143,7 @@ export default function VendorDashboardPage() {
 
           {/* Quick actions */}
           <div className="space-y-3">
-            <Link href="/vendor/services" className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-200 hover:border-primary-300 hover:shadow-sm transition-all">
+            <Link href="/vendor/services" className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-200 hover:border-primary-300 hover:shadow-xs transition-all">
               <div className="w-10 h-10 bg-primary-50 rounded-xl flex items-center justify-center flex-shrink-0">
                 <svg className="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" /></svg>
               </div>
@@ -153,7 +153,7 @@ export default function VendorDashboardPage() {
               </div>
               <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
             </Link>
-            <Link href="/vendor/documents" className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-200 hover:border-primary-300 hover:shadow-sm transition-all">
+            <Link href="/vendor/documents" className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-200 hover:border-primary-300 hover:shadow-xs transition-all">
               <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
                 <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
               </div>
@@ -163,7 +163,7 @@ export default function VendorDashboardPage() {
               </div>
               <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
             </Link>
-            <Link href="/vendor/bank-details" className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-200 hover:border-primary-300 hover:shadow-sm transition-all">
+            <Link href="/vendor/bank-details" className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-200 hover:border-primary-300 hover:shadow-xs transition-all">
               <div className="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
                 <svg className="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" /></svg>
               </div>
@@ -292,7 +292,7 @@ export default function VendorDashboardPage() {
         {statCards.map((card) => (
           <div
             key={card.label}
-            className={`bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden`}
+            className={`bg-white rounded-xl p-5 border border-gray-100 shadow-xs hover:shadow-md transition-shadow relative overflow-hidden`}
           >
             <div className={`absolute top-0 right-0 w-20 h-20 ${card.lightBg} rounded-full -translate-y-1/2 translate-x-1/2`} />
             <div className="flex items-center gap-4 relative z-10">
@@ -323,7 +323,7 @@ export default function VendorDashboardPage() {
       </div>
 
       {/* Quick Actions */}
-      <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
+      <div className="bg-white rounded-xl border border-gray-200 shadow-xs p-5">
         <h2 className="text-base font-semibold text-gray-900 mb-4">Quick Actions</h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
           {quickActions.map((action) => (
@@ -332,7 +332,7 @@ export default function VendorDashboardPage() {
               href={action.href}
               className={`flex flex-col items-center gap-2.5 p-4 rounded-xl ${action.bg} ${action.hoverBg} transition-all group`}
             >
-              <div className={`w-11 h-11 rounded-xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform`}>
+              <div className={`w-11 h-11 rounded-xl bg-white shadow-xs flex items-center justify-center group-hover:scale-110 transition-transform`}>
                 <svg className={`w-5 h-5 ${action.color}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d={action.icon} />
                 </svg>
@@ -348,7 +348,7 @@ export default function VendorDashboardPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Pending Bookings */}
-        <div className="lg:col-span-2 bg-white rounded-xl border border-gray-200 shadow-sm">
+        <div className="lg:col-span-2 bg-white rounded-xl border border-gray-200 shadow-xs">
           <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
             <div className="flex items-center gap-3">
               <h2 className="text-base font-semibold text-gray-900">
@@ -417,7 +417,7 @@ export default function VendorDashboardPage() {
                     <button
                       onClick={() => handleAccept(booking.id)}
                       disabled={actionLoading === booking.id}
-                      className="px-3.5 py-1.5 text-xs font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors disabled:opacity-50 shadow-sm"
+                      className="px-3.5 py-1.5 text-xs font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors disabled:opacity-50 shadow-xs"
                     >
                       Accept
                     </button>
@@ -438,7 +438,7 @@ export default function VendorDashboardPage() {
         {/* Right Column */}
         <div className="space-y-6">
           {/* Earnings This Month */}
-          <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
+          <div className="bg-white rounded-xl border border-gray-200 shadow-xs p-5">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-sm font-semibold text-gray-900">Earnings Progress</h3>
               <Link href="/vendor/earnings" className="text-xs text-primary-600 hover:text-primary-700 font-medium">
@@ -480,7 +480,7 @@ export default function VendorDashboardPage() {
           </div>
 
           {/* Quick Links */}
-          <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <div className="bg-white rounded-xl border border-gray-200 shadow-xs">
             <div className="px-5 py-4 border-b border-gray-100">
               <h2 className="text-sm font-semibold text-gray-900">
                 Quick Links

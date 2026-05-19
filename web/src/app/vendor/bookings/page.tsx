@@ -172,7 +172,7 @@ export default function VendorBookingsPage() {
           {bookings.map((booking) => (
             <div
               key={booking.id}
-              className="bg-white rounded-xl border border-gray-200 shadow-sm p-5 hover:shadow-md transition-shadow"
+              className="bg-white rounded-xl border border-gray-200 shadow-xs p-5 hover:shadow-md transition-shadow"
             >
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div className="min-w-0 flex-1">

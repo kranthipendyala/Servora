@@ -83,7 +83,7 @@ export default function BusinessAvatar({ name, categoryIcon, size = "card", clas
           backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='1' fill='%23000'/%3E%3C/svg%3E\")",
         }} />
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-          <div className="w-14 h-14 rounded-2xl bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+          <div className="w-14 h-14 rounded-2xl bg-white shadow-xs border border-gray-100 flex items-center justify-center">
             {categoryIcon ? (
               <CategoryIcon icon={categoryIcon} className="w-7 h-7 text-gray-400" />
             ) : (

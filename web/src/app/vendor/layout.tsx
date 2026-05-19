@@ -103,7 +103,7 @@ function VendorSidebar() {
               href={item.href}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                 isActive
-                  ? "bg-white/15 text-white shadow-sm backdrop-blur-sm"
+                  ? "bg-white/15 text-white shadow-xs backdrop-blur-sm"
                   : "text-accent-200/70 hover:bg-white/10 hover:text-white"
               } ${collapsed ? "justify-center px-2" : ""}`}
               title={collapsed ? item.label : undefined}
@@ -126,7 +126,7 @@ function VendorSidebar() {
       <div className="border-t border-white/10 p-3">
         {!collapsed ? (
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-sm font-bold shadow-sm">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-sm font-bold shadow-xs">
               {user?.name?.charAt(0)?.toUpperCase() || "V"}
             </div>
             <div className="flex-1 min-w-0">

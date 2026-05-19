@@ -34,7 +34,7 @@ export default function AboutPage() {
 
       <div className="container mx-auto px-4 py-12 md:py-16 max-w-4xl">
         {/* Mission */}
-        <div className="bg-white rounded-card p-8 md:p-10 shadow-sm border border-gray-100 mb-8">
+        <div className="bg-white rounded-card p-8 md:p-10 shadow-xs border border-gray-100 mb-8">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary-800 mb-4">Our Mission</h2>
           <p className="text-gray-600 leading-relaxed text-lg">
             We&apos;re building India&apos;s most trusted home services platform — connecting customers with verified
@@ -51,7 +51,7 @@ export default function AboutPage() {
             { title: "Instant Booking", desc: "Book a professional in minutes. Pick your slot, pay, done — no phone tag.", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
             { title: "Quality Guarantee", desc: "Not satisfied? We&apos;ll make it right. Every booking is backed by our service guarantee.", icon: "M5 13l4 4L19 7" },
           ].map((v) => (
-            <div key={v.title} className="bg-white rounded-card p-6 shadow-sm border border-gray-100">
+            <div key={v.title} className="bg-white rounded-card p-6 shadow-xs border border-gray-100">
               <div className="w-12 h-12 bg-primary-50 border border-primary-100 rounded-2xl flex items-center justify-center text-primary-600 mb-4">
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d={v.icon} />

@@ -106,7 +106,7 @@ export default function VendorServicesPage() {
   const ServiceCard = ({ service }: { service: Service }) => {
     const active = Number(service.is_active) === 1;
     return (
-      <div className={`flex items-center justify-between gap-4 p-4 rounded-xl border transition-all ${active ? "bg-white border-gray-200 hover:shadow-sm" : "bg-gray-50 border-gray-100 opacity-70"}`}>
+      <div className={`flex items-center justify-between gap-4 p-4 rounded-xl border transition-all ${active ? "bg-white border-gray-200 hover:shadow-xs" : "bg-gray-50 border-gray-100 opacity-70"}`}>
         <div className="flex items-center gap-4 min-w-0 flex-1">
           {service.image ? (
             <img src={service.image} alt={service.name} className="w-12 h-12 rounded-xl object-cover flex-shrink-0" />
@@ -183,7 +183,7 @@ export default function VendorServicesPage() {
         </div>
         <Link
           href="/vendor/services/new"
-          className="px-4 py-2.5 text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 rounded-xl transition-colors flex items-center gap-2 shadow-sm"
+          className="px-4 py-2.5 text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 rounded-xl transition-colors flex items-center gap-2 shadow-xs"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />

@@ -64,7 +64,7 @@ export default function VendorLeadsPage() {
           {leads.map(lead => {
             const method = METHOD_ICON[lead.contact_method] || METHOD_ICON.enquiry;
             return (
-              <div key={lead.id} className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-sm transition-shadow">
+              <div key={lead.id} className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-xs transition-shadow">
                 <div className="flex items-start gap-4">
                   <div className={`w-10 h-10 rounded-xl ${method.color} flex items-center justify-center flex-shrink-0`}>
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d={method.icon} /></svg>

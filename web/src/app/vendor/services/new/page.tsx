@@ -224,7 +224,7 @@ export default function VendorServiceFormPage() {
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Basic Info */}
-        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 space-y-5">
+        <div className="bg-white rounded-xl border border-gray-200 shadow-xs p-6 space-y-5">
           <h3 className="text-base font-semibold text-gray-900">Service Details</h3>
 
           <div>
@@ -286,7 +286,7 @@ export default function VendorServiceFormPage() {
         </div>
 
         {/* Pricing */}
-        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 space-y-5">
+        <div className="bg-white rounded-xl border border-gray-200 shadow-xs p-6 space-y-5">
           <h3 className="text-base font-semibold text-gray-900">Pricing & Duration</h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -317,7 +317,7 @@ export default function VendorServiceFormPage() {
         </div>
 
         {/* Variants */}
-        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
+        <div className="bg-white rounded-xl border border-gray-200 shadow-xs p-6">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h3 className="text-base font-semibold text-gray-900">Service Variants</h3>

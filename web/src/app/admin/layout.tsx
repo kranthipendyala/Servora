@@ -82,7 +82,7 @@ export default function AdminLayout({
           }`}
         >
           {/* Top bar */}
-          <header className="sticky top-0 z-30 h-16 bg-white border-b border-gray-200 flex items-center justify-between px-6 shadow-sm">
+          <header className="sticky top-0 z-30 h-16 bg-white border-b border-gray-200 flex items-center justify-between px-6 shadow-xs">
             <div>
               <h1 className="text-lg font-semibold text-gray-900 capitalize">
                 {pathname

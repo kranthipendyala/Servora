@@ -27,7 +27,7 @@ export default function PrivacyPage() {
       </section>
 
       <div className="container mx-auto px-4 py-12 max-w-4xl">
-        <div className="bg-white rounded-card p-8 md:p-10 shadow-sm border border-gray-100">
+        <div className="bg-white rounded-card p-8 md:p-10 shadow-xs border border-gray-100">
           <div className="prose prose-sm md:prose-base max-w-none">
             <p className="text-gray-600 leading-relaxed">
               At {SITE_NAME}, we take your privacy seriously. This Privacy Policy explains how we collect,

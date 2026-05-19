@@ -166,7 +166,7 @@ export default function RevenuePhaseSettingsPage() {
                 onClick={() => !isActive && setConfirmPhase(phase)}
                 disabled={isActive}
                 className={`text-left rounded-xl border-2 p-4 transition-all ${
-                  isActive ? `${c.bg} ${c.border}` : "bg-white border-gray-200 hover:border-gray-300 hover:shadow-sm"
+                  isActive ? `${c.bg} ${c.border}` : "bg-white border-gray-200 hover:border-gray-300 hover:shadow-xs"
                 }`}
               >
                 <div className="flex items-center justify-between mb-2">

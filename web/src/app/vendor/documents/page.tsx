@@ -94,7 +94,7 @@ export default function VendorDocumentsPage() {
       </div>
 
       {/* Upload Form */}
-      <form onSubmit={handleUpload} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 space-y-4">
+      <form onSubmit={handleUpload} className="bg-white rounded-xl border border-gray-200 shadow-xs p-6 space-y-4">
         <h3 className="text-base font-semibold text-gray-900">Upload New Document</h3>
 
         <div>
@@ -123,7 +123,7 @@ export default function VendorDocumentsPage() {
       </form>
 
       {/* Document List */}
-      <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+      <div className="bg-white rounded-xl border border-gray-200 shadow-xs overflow-hidden">
         <div className="px-6 py-4 border-b border-gray-100">
           <h3 className="text-base font-semibold text-gray-900">Submitted Documents</h3>
         </div>

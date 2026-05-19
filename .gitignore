@@ -18,10 +18,16 @@ web/tsconfig.tsbuildinfo
 # React Native build artifacts
 mobile/.expo/
 mobile/dist/
-android/app/build/
-android/.gradle/
-android/build/
-android/local.properties
+mobile/android/app/build/
+mobile/android/.gradle/
+mobile/android/build/
+mobile/android/local.properties
+vendor-app/.expo/
+vendor-app/dist/
+vendor-app/android/app/build/
+vendor-app/android/.gradle/
+vendor-app/android/build/
+vendor-app/android/local.properties
 
 # CodeIgniter runtime
 api/application/logs/*

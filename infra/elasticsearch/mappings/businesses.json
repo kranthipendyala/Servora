@@ -1,0 +1,72 @@
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "edge_ngram_analyzer": {
+          "tokenizer": "standard",
+          "filter": ["lowercase", "edge_ngram_filter"]
+        }
+      },
+      "filter": {
+        "edge_ngram_filter": {
+          "type": "edge_ngram",
+          "min_gram": 2,
+          "max_gram": 20
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "id":                       { "type": "long" },
+      "name":                     {
+        "type": "text",
+        "analyzer": "edge_ngram_analyzer",
+        "search_analyzer": "standard",
+        "fields": { "keyword": { "type": "keyword" } }
+      },
+      "slug":                     { "type": "keyword" },
+      "phone":                    { "type": "keyword" },
+      "description":              { "type": "text" },
+      "short_description":        { "type": "text" },
+      "address":                  { "type": "text" },
+      "pin_code":                 { "type": "keyword" },
+      "logo":                     { "type": "keyword", "index": false },
+
+      "status":                   { "type": "keyword" },
+      "is_active":                { "type": "boolean" },
+      "is_verified":              { "type": "boolean" },
+      "is_featured":              { "type": "boolean" },
+
+      "avg_rating":               { "type": "float" },
+      "total_reviews":            { "type": "integer" },
+
+      "city_id":                  { "type": "long" },
+      "city_name":                {
+        "type": "text",
+        "fields": { "keyword": { "type": "keyword" } }
+      },
+      "city_slug":                { "type": "keyword" },
+      "state_id":                 { "type": "long" },
+      "state_slug":               { "type": "keyword" },
+      "locality_id":              { "type": "long" },
+      "locality_name":            { "type": "text" },
+      "locality_slug":            { "type": "keyword" },
+
+      "location":                 { "type": "geo_point" },
+
+      "category_names":           {
+        "type": "text",
+        "fields": { "keyword": { "type": "keyword" } }
+      },
+      "category_slugs":           { "type": "keyword" },
+
+      "service_names":            { "type": "text" },
+
+      "service_area_city_slugs":  { "type": "keyword" },
+
+      "created_at":               { "type": "date" },
+      "updated_at":               { "type": "date" }
+    }
+  }
+}

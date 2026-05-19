@@ -40,12 +40,13 @@ Servora/
 
 ### 1. Database — MySQL
 
-Run MySQL via XAMPP (or any local MySQL 8). Create the schema and load the seed dump:
+Run MySQL via XAMPP (or any local MySQL 8). Create the schema and run the migrations:
 
 ```powershell
-mysql -u root -e "CREATE DATABASE servora CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci"
-mysql -u root servora < mechanical_directory_dump.sql
+mysql -u root < database/run_migrations.sql
 ```
+
+This creates the `servora` database and applies all migrations from `database/migrations/`.
 
 phpMyAdmin (bundled with XAMPP): http://localhost/phpmyadmin
 
@@ -137,6 +138,6 @@ When ES is unreachable, all read endpoints transparently fall back to MySQL — 
 
 - **Web** → push to GitHub, connect Vercel project, set env from [web/.env.example](web/.env.example)
 - **API** → upload `api/` to a PHP 8 host, point webroot at the `api/` folder, run `composer install`
-- **DB** → managed MySQL or self-hosted; import schema from [mechanical_directory_dump.sql](mechanical_directory_dump.sql)
+- **DB** → managed MySQL or self-hosted; create the schema with [database/run_migrations.sql](database/run_migrations.sql)
 - **Elasticsearch** → Elastic Cloud, Bonsai, or self-hosted on the API host
 - **Mobile** → native release builds via `cd android && ./gradlew assembleRelease` (Android) / Xcode archive (iOS)

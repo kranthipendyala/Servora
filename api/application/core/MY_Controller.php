@@ -101,15 +101,50 @@ class Base_Api_Controller extends CI_Controller
             return FALSE;
         }
 
+        // Try JWT first (new path). JWTs have a recognisable shape (eyXXX.YYY.ZZZ).
+        // Inline the shape check so we don't load the JWT library on every legacy-token request.
+        if (substr_count($token, '.') === 2 && substr($token, 0, 2) === 'ey') {
+            $this->load->library('Jwt_lib', NULL, 'jwt');
+            $payload = $this->jwt->decode($token);
+            if ($payload && ! empty($payload['sub'])) {
+                $this->load->model('User_model');
+                $user = $this->User_model->get_by_id((int) $payload['sub']);
+                if ($user) {
+                    $this->current_user = $user;
+                    return TRUE;
+                }
+            }
+            // JWT looked valid by shape but didn't verify or user not found —
+            // fall through to opaque-token lookup in case the client is
+            // mid-migration and sent something else.
+        }
+
+        // Legacy opaque-token path (users.token + users.token_expires_at).
         $this->load->model('User_model');
         $user = $this->User_model->get_by_token($token);
-
         if ($user && strtotime($user->token_expires_at) > time()) {
             $this->current_user = $user;
             return TRUE;
         }
 
         return FALSE;
+    }
+
+    /**
+     * Issue a JWT for a user. Used by Auth.php to dual-emit (legacy opaque token
+     * AND a JWT) so clients can migrate at their own pace. Returns the encoded
+     * JWT string, or NULL if the JWT library fails to load (never throws).
+     */
+    protected function _issue_jwt($user_id, $role)
+    {
+        if (empty($user_id)) return NULL;
+        try {
+            $this->load->library('Jwt_lib', NULL, 'jwt');
+            return $this->jwt->issue((int) $user_id, $role);
+        } catch (\Throwable $e) {
+            log_message('error', 'JWT issuance failed for user ' . $user_id . ': ' . $e->getMessage());
+            return NULL;
+        }
     }
 
     /**

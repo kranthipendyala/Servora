@@ -43,6 +43,8 @@ class Auth extends Base_Api_Controller
             $this->respond_error('Email address is already registered', 409);
         }
 
+        $result['jwt'] = $this->_issue_jwt($result['id'], $result['role']);
+
         $this->user_tracker->log('register', $result['id'], array('email' => $data['email'], 'phone' => isset($data['phone']) ? $data['phone'] : NULL));
         $this->respond($result, 201, 'Registration successful');
     }
@@ -68,6 +70,8 @@ class Auth extends Base_Api_Controller
         if ($result === FALSE) {
             $this->respond_error('Invalid email or password', 401);
         }
+
+        $result['jwt'] = $this->_issue_jwt($result['id'], $result['role']);
 
         $this->user_tracker->log('login', $result['id'], array('email' => $data['email']));
         $this->respond($result, 200, 'Login successful');
@@ -156,6 +160,7 @@ class Auth extends Base_Api_Controller
                 'role'             => $user->role,
                 'token'            => $token,
                 'token_expires_at' => date('Y-m-d H:i:s', time() + $token_expiry),
+                'jwt'              => $this->_issue_jwt($user->id, $user->role),
                 'onboarding_completed' => isset($user->onboarding_completed) ? (bool) $user->onboarding_completed : TRUE,
             ), 200, 'Login successful');
 
@@ -240,6 +245,7 @@ class Auth extends Base_Api_Controller
             'role'             => $insert['role'],
             'token'            => $token,
             'token_expires_at' => date('Y-m-d H:i:s', time() + $token_expiry),
+            'jwt'              => $this->_issue_jwt($user_id, $insert['role']),
             'onboarding_completed' => (bool) $insert['onboarding_completed'],
         ), 201, 'Account created successfully');
 
@@ -298,6 +304,7 @@ class Auth extends Base_Api_Controller
                 'role'             => $user->role,
                 'token'            => $token,
                 'token_expires_at' => date('Y-m-d H:i:s', time() + $token_expiry),
+                'jwt'              => $this->_issue_jwt($user->id, $user->role),
             ), 200, 'Login successful');
 
             $this->user_tracker->log('google_login', $user->id, array('email' => $user->email, 'google_id' => $google_id));
@@ -328,6 +335,7 @@ class Auth extends Base_Api_Controller
                 'role'             => 'user',
                 'token'            => $token,
                 'token_expires_at' => date('Y-m-d H:i:s', time() + $token_expiry),
+                'jwt'              => $this->_issue_jwt($user_id, 'user'),
             ), 201, 'Account created successfully');
 
             $this->user_tracker->log('google_login', $user_id, array('email' => $email, 'google_id' => $google_id, 'is_new' => true));
